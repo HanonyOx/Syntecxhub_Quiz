@@ -183,10 +183,10 @@ const quizQues = () => {
   currentQuestion = Math.floor(Math.random() * questionAndAnswer.length);
 
   ques.innerHTML = questionAndAnswer[currentQuestion].ques;
-  option1.innerHTML = questionAndAnswer[currentQuestion].options[0];
-  option2.innerHTML = questionAndAnswer[currentQuestion].options[1];
-  option3.innerHTML = questionAndAnswer[currentQuestion].options[2];
-  option4.innerHTML = questionAndAnswer[currentQuestion].options[3];
+  option1.textContent = questionAndAnswer[currentQuestion].options[0];
+  option2.textContent = questionAndAnswer[currentQuestion].options[1];
+  option3.textContent = questionAndAnswer[currentQuestion].options[2];
+  option4.textContent = questionAndAnswer[currentQuestion].options[3];
 
   answer1.value = questionAndAnswer[currentQuestion].options[0];
   answer2.value = questionAndAnswer[currentQuestion].options[1];
@@ -221,18 +221,13 @@ submit.addEventListener("submit", (e) => {
   if (
     selectedAnswer.value === questionAndAnswer[currentQuestion].correctAnswer
   ) {
-    options[selectedIndex].style.backgroundColor = "green";
-    options[selectedIndex].style.color = "white";
+    options[selectedIndex].style.color = "#90EE90";
     correction.innerHTML = "Correct!";
-    correction.style.backgroundColor = "green";
-    correction.style.color = "white";
+    correction.style.color = "#90EE90";
   } else {
-    options[selectedIndex].style.backgroundColor = "red";
-    options[selectedIndex].style.color = "white";
+    options[selectedIndex].style.color = "red";
     correction.innerHTML = `Correct answer: ${questionAndAnswer[currentQuestion].correctAnswer}`;
-    correction.style.backgroundColor = "red";
-    correction.style.padding = "4px";
-    correction.style.color = "white";
+    correction.style.color = "red";
   }
 
   setTimeout(() => {
